@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'builder',
+    'sync',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,3 +121,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Client Configuration
+URL = 'https://omgvamp-hearthstone-v1.p.mashape.com/cards?collectible=1'
+API_TOKEN = 'bMTgm5BYQqmsh9HcxwyQ9KWi1REUp1rs7EFjsnhwp7GL9PNGrI'
+BLACKLIST = [
+    'Tavern Brawl',
+    'Missions',
+    'System',
+    'Hero Skins',
+    'Debug',
+    'Promo',
+    'Credits'
+]
