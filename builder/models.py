@@ -41,3 +41,15 @@ class Card(models.Model):
 
 	def __str__(self):
 		return self.card_id
+
+class AddNews(models.Model):
+	date = models.DateField(auto_now_add=True)
+	content = models.TextField()
+
+	def __str__(self):
+		return '%s %s' % (self.date, self.content)
+
+
+
+
+

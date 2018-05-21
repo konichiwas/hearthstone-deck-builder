@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Expansion, Card, PlayerClass
+from .models import Expansion, Card, PlayerClass, AddNews, PromoExpansion
 
 @admin.register(Expansion)
 class ExpansionAdmin(admin.ModelAdmin):
@@ -15,3 +15,7 @@ class CardAdmin(admin.ModelAdmin):
 @admin.register(PlayerClass)
 class PlayerClassAdmin(admin.ModelAdmin):
 	list_display = ['name']
+
+@admin.register(AddNews)
+class AddNewsAdmin(admin.ModelAdmin):
+	list_display = ['date']
