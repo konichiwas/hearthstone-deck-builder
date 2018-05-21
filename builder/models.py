@@ -49,7 +49,11 @@ class AddNews(models.Model):
 	def __str__(self):
 		return '%s %s' % (self.date, self.content)
 
+class PromoExpansion(models.Model):
+	expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
 
+	def __str__(self):
+		return self.expansion.name
 
 
 

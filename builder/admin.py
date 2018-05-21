@@ -19,3 +19,7 @@ class PlayerClassAdmin(admin.ModelAdmin):
 @admin.register(AddNews)
 class AddNewsAdmin(admin.ModelAdmin):
 	list_display = ['date']
+
+@admin.register(PromoExpansion)
+class PromoExpansionAdmin(admin.ModelAdmin):
+	list_display = ['expansion']
