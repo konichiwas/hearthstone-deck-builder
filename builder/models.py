@@ -42,14 +42,14 @@ class Card(models.Model):
 	def __str__(self):
 		return self.card_id
 
-class AddNews(models.Model):
+class New(models.Model):
 	date = models.DateField(auto_now_add=True)
 	content = models.TextField()
 
 	def __str__(self):
 		return '%s %s' % (self.date, self.content)
 
-class PromoExpansion(models.Model):
+class Promo(models.Model):
 	expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
 
 	def __str__(self):
