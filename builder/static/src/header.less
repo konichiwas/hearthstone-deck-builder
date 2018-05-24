@@ -1,0 +1,42 @@
+header {
+	position: relative;
+	overflow: hidden;
+
+	background-color: @gray-dark;
+	
+	.home-link {
+		display: inline-block;
+		padding: 20px 30px;
+		line-height: 1;
+
+		font-family: 'Hind', sans-serif;
+		font-size: 30px;
+		color: @gray;
+		text-decoration: none;
+	}
+
+	ul {
+		.reset-list;
+		.clearfix;
+
+		position: absolute;
+		top: 50%;
+		left: 390px;
+		transform: translateY(-50%);
+
+		a {
+			display: block;
+			border-left: 2px solid black;
+			padding: 26px 30px;
+		
+			color: @gray;
+			font-size: 20px;
+			text-decoration: none;
+		} 
+	}
+
+	li {
+		display: block;
+		float: left;
+	}	
+}

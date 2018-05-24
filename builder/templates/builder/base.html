@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+   	<meta charset="utf-8">
+   	<title>{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
+    <link rel="stylesheet" 
+          href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" 
+    integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"      crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" 
+    href="{% static 'builder/main.css' %}"/>
+</head>
+<body>
+	{% include "builder/includes/header.html" %}
+{% block body %}
+{% endblock %}
+	{% include "builder/includes/footer.html" %}
+</body>
+</html>
