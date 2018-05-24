@@ -1,1 +1,9 @@
-placeholder
+{% extends 'builder/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="index width-wrapper">
+	{% include "builder/includes/slideshow.html" %}
+	{% include "builder/includes/news.html" %}
+</div>
+{% endblock %}

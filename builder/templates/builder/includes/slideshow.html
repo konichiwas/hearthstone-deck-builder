@@ -1,0 +1,16 @@
+<div class="slideshow">
+	{% for promo in promos %}
+		<div class="slide">
+			<div class="expansion">
+				<img class="promo-image" src="{{ promo.image.url }}">
+			</div>
+			{% for key, value in cards.items %}
+				{% if key is promo.expansion.name  %}
+					<div class="card">
+						<img class="card-image" src="{{ value }}">
+					</div>
+				{% endif %}
+			{%  endfor %}
+		</div>
+	{% endfor %}
+</div>
