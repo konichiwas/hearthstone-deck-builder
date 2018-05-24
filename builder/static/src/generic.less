@@ -1,0 +1,30 @@
+body {
+	background-color: #e0e0e0;
+}
+
+.width-wrapper {
+	max-width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media (min-width: 1651px) {
+		width: 100%;
+	}
+	@media (max-width: 1650px) {
+		width: 92%;
+	}
+}
+
+.reset-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.clearfix {
+	&::after {
+		display: table;
+		content: "";
+		clear: both;	
+	}
+}
