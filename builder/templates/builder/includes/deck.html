@@ -1,0 +1,27 @@
+{% if deck %}
+<div class="deck">
+	<ul>
+		{% for card in deck %}
+			<li id="{{ card.cardId }}">
+				{{ card.name }} x {{ card.count }}
+			</li>
+		{% endfor %}	
+	</ul>
+</div>
+{% else %}
+<div class="deck">
+	<br>
+	<form role ="import" method="GET" action="{% url 'builder:album' %}">
+		<input type="text" class="" name="code" 
+        	value="{{ request.GET.code }}"
+	        placeholder="Paste deck code">
+	    <button type="submit">Import</button>
+	</form>
+	<p>or</p>
+	<h3>Pick a class</h3>
+	{% for class in classes %}
+	<button class="player-class">{{ class }}</button>
+	{% endfor %}	
+</div>
+{% endif %}
+

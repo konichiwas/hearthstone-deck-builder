@@ -1,0 +1,15 @@
+{% if cards %}
+<div class="showcase">	
+	{% for cardset in cards %}
+	<div class="cards">
+		{% for card in cardset %}
+			<img data-lazy="{{ card.image }}" id="{{ card.card_id }}">
+		{% endfor %}
+	</div>
+	{% endfor %}
+</div>
+{% else %}
+<div class="">
+	<p>No cards for selected criteria!</p>
+</div>
+{% endif %}		

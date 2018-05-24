@@ -1,0 +1,10 @@
+{% extends 'builder/base.html' %}
+{% block title %}Album{% endblock %}
+
+{% block body %}
+<div class="album width-wrapper">
+    {% include 'builder/includes/showcase.html' %}
+	{% include 'builder/includes/cardfilter.html' %}
+	{% include 'builder/includes/deck.html' %}
+</div>
+{% endblock %}
