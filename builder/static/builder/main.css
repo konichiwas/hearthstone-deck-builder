@@ -326,6 +326,35 @@ footer li + li {
 .slideshow .card img {
   width: 100%;
 }
+.slideshow .slick-arrow {
+  position: absolute;
+  top: 90%;
+  z-index: 10;
+  border: none;
+  background: none;
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border-radius: 50%;
+  text-indent: -4000px;
+}
+.slideshow .slick-prev {
+  left: 1%;
+}
+.slideshow .slick-next {
+  left: 95%;
+}
+.slideshow .slick-dots {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: rotate(270deg);
+  border: none;
+  background: none;
+}
+.slideshow .slick-dots button {
+  transform: rotate(90deg);
+}
 .album::after {
   display: table;
   content: "";
@@ -392,4 +421,18 @@ footer li + li {
   height: 50px;
   width: 150px;
   margin: 20px auto;
+}
+.border {
+  width: 50%;
+  height: 500px;
+  margin: 50px auto;
+  overflow: hidden;
+  background-color: #232b2b;
+}
+.border .contactform {
+  width: 75%;
+  margin: 50px auto;
+  padding: 0;
+  text-align: center;
+  background-color: white;
 }
