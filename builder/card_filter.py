@@ -34,25 +34,21 @@ class SearchForm(forms.ModelForm):
 		self.fields['rarity'].required=False
 
 	def get_data(self):
-		params = {}
 		query = {}
 		data = self.cleaned_data
 		
 		for k in data:
 			if data[k]:
-				if k is 'cost':
-					params[k] = data[k]
+				if k == 'cost':
 					if int(data[k]) < 8:
 						query['cost'] = int(data['cost'])
 					else:
 						query['cost__gte'] = int(data['cost'])
-				elif k is 'FORMAT':
-					params[k] = data[k]
-					if data[k] < 'wild':
+				elif k == 'FORMAT':
+					if data[k] != 'wild':
 						query['expansion__status'] = data[k]		 
 				else:
-					params[k] = data[k].id
 					query[k] = data[k]		
 
 		cards = Card.objects.filter(**query).order_by('cost')
-		return cards, params
+		return cards

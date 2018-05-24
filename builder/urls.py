@@ -6,5 +6,6 @@ app_name = 'builder'
 
 urlpatterns = [
 	path('', views.index, name='index'),
-	path('main/', views.main, name='main'),
+	path('album/', views.album, name='album'),
+	path('contact/', views.contact, name='contact'),
 ]

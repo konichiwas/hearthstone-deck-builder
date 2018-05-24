@@ -51,9 +51,25 @@ class New(models.Model):
 
 class Promo(models.Model):
 	expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
+	image = models.ImageField(upload_to='images/', default='')
+	order = models.PositiveIntegerField(default=1)
 
+	class Meta:
+		ordering = ['-order']
+		
 	def __str__(self):
 		return self.expansion.name
 
+class Message(models.Model):
+	name = models.CharField(max_length=50)
+	lastname = models.CharField(max_length=50)
+	email = models.EmailField()
+	message = models.CharField(max_length=1000)
+	date = models.DateTimeField(auto_now_add=True)
 
+	class Meta:
+		ordering = ['-date']
+
+	def __str__(self):
+		return self.message
 
