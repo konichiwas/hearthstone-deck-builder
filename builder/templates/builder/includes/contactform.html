@@ -1,0 +1,10 @@
+<div class="border">
+	<div class="contactform">
+		<h3>Send us a message</h3>
+		<form action="{% url 'builder:contact' %}" method="POST" id="contactform">
+			{% csrf_token %}
+			{{ form.as_p }}
+		<button type="Submit">Send</button>	
+		</form>
+	</div>
+</div>

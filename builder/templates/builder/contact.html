@@ -1,1 +1,8 @@
-placeholder
+{% extends 'builder/base.html' %}
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<div class="width-wrapper">
+	{% include "builder/includes/contactform.html" %}
+</div>
+{% endblock %}

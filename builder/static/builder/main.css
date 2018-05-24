@@ -326,3 +326,70 @@ footer li + li {
 .slideshow .card img {
   width: 100%;
 }
+.album::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.album .showcase {
+  float: left;
+  width: calc(100% - (315px * 2));
+}
+.album .cardfilter {
+  float: left;
+  width: 315px;
+}
+.album .deck {
+  float: left;
+  width: 315px;
+}
+.showcase {
+  margin: 50px 0;
+  background: white url("images/album_background.jpg");
+}
+.showcase::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+.showcase .slick-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  border: none;
+  width: 25px;
+  height: 25px;
+  background-color: #232b2b;
+  border-radius: 50%;
+  text-indent: -4000px;
+}
+.showcase .slick-prev {
+  left: 1%;
+}
+.showcase .slick-next {
+  left: 95%;
+}
+.showcase img {
+  display: block;
+  float: left;
+  width: 25%;
+}
+.cardfilter {
+  margin: 50px 0;
+  padding-bottom: 155px;
+  background-color: silver;
+}
+.cardfilter p {
+  margin: 50px 0;
+}
+.deck {
+  margin: 50px 0;
+  background-color: gray;
+  text-align: center;
+}
+.deck .player-class {
+  display: inline-block;
+  height: 50px;
+  width: 150px;
+  margin: 20px auto;
+}
