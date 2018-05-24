@@ -119,7 +119,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-
 STATIC_URL = '/static/'
 
 # Client Configuration
@@ -134,3 +133,7 @@ BLACKLIST = [
     'Promo',
     'Credits'
 ]
+
+#Local Storage of images
+MEDIA_ROOT = '/home/madao/Development/hsdeckbuilder/media/'
+MEDIA_URL = 'http://localhost:8080/'
