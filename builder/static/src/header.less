@@ -1,33 +1,145 @@
 header {
 	position: relative;
-	overflow: hidden;
 
 	background-color: @gray-dark;
+
+	._mobile-layout {
+		&.open {
+			.main-menu {
+				display: block;
+			}
+
+			.burger-button {
+				&::before {
+					transform: translateY(10px) rotate(45deg);
+				}
+				&::after {
+					transform: translateY(-10px) rotate(-45deg);
+				}
+			}
+		} 
+
+		.home-link {
+			display: block;
+			margin: 0 auto;
+			width: 45px;
+			padding: 20px 0;
+			
+			.text {
+				display: none;
+			}
+
+			img {
+				width: 100%;
+				display: block;
+			}
+		}
+		
+		.burger-button {
+			display: block;
+		}
+		
+		.main-menu {
+			.reset-list;
+
+			display: none;
+			position: absolute;
+			left: 0;
+			right: 0;
+			padding: 20px;
+			z-index: 10;
+			border-bottom: 2px solid @gray;
+
+			background-color: @gray-dark;
+		}
+	}
+
+	@media (min-width: 801px) {
+		overflow: hidden;
+
+		.home-link {
+			display: inline-block;
+			padding: 20px 30px;
+			line-height: 1;
+
+			img {
+				display: none;
+			} 
+		}
+
+		.burger-button {
+			display: none;
+		}
+
+		.main-menu {
+			.clearfix;
+			.reset-list;
+
+			position: absolute;
+			top: 50%;
+			left: 390px;
+			transform: translateY(-50%);
+			
+			li {
+				float: left;
+
+				a {
+					border-left: 2px solid black;
+					padding: 26px 30px;
+				}
+			}		
+		}
+	}
+	@media (min-width: 501px) and (max-width: 800px) {
+		._mobile-layout;
+	}
+	@media (max-width: 500px) {
+		._mobile-layout;
+		
+		.main-menu {
+			text-align: center;
+		}	
+	}
 	
 	.home-link {
-		display: inline-block;
-		padding: 20px 30px;
-		line-height: 1;
-
 		font-family: 'Hind', sans-serif;
 		font-size: 30px;
 		color: @gray;
 		text-decoration: none;
 	}
-
-	ul {
-		.reset-list;
-		.clearfix;
-
+	
+	.burger-button {
 		position: absolute;
+		// top: 30px;
 		top: 50%;
-		left: 390px;
 		transform: translateY(-50%);
+		left: 20px;
+		width: 45px;
+		height: 25px;
 
+		&::before, &::after {
+			.reset-pseudo;
+			
+			position: absolute;
+			width: 100%;
+			height: 5px;
+			transition: transform 0.3s;
+
+			background-color: white;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+	}
+
+	.main-menu {
 		a {
 			display: block;
-			border-left: 2px solid black;
-			padding: 26px 30px;
 		
 			color: @gray;
 			font-size: 20px;
@@ -37,6 +149,5 @@ header {
 
 	li {
 		display: block;
-		float: left;
 	}	
 }
