@@ -1,0 +1,24 @@
+.burger-button {
+	position: relative;
+	width: 45px;
+	height: 25px;
+
+	&::before, &::after {
+		.reset-pseudo;
+
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		transition: transform 0.3s;
+
+		background-color: white;
+	}
+
+	&::before {
+		top: 0;
+	}
+
+	&::after {
+		bottom: 0;
+	}
+}
