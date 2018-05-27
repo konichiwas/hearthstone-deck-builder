@@ -254,6 +254,7 @@ header ._mobile-layout .main-menu {
   padding: 20px;
   z-index: 10;
   border-bottom: 2px solid #cacaca;
+  border-top: 2px solid #cacaca;
   background-color: #232b2b;
 }
 @media (min-width: 801px) {
@@ -330,6 +331,7 @@ header ._mobile-layout .main-menu {
     padding: 20px;
     z-index: 10;
     border-bottom: 2px solid #cacaca;
+    border-top: 2px solid #cacaca;
     background-color: #232b2b;
   }
 }
@@ -370,6 +372,7 @@ header ._mobile-layout .main-menu {
     padding: 20px;
     z-index: 10;
     border-bottom: 2px solid #cacaca;
+    border-top: 2px solid #cacaca;
     background-color: #232b2b;
   }
   header .main-menu {
@@ -592,16 +595,41 @@ footer li + li {
   margin: 20px auto;
 }
 .border {
-  width: 50%;
-  height: 500px;
   margin: 50px auto;
   overflow: hidden;
   background-color: #232b2b;
 }
 .border .contactform {
-  width: 75%;
+  width: 290px;
   margin: 50px auto;
-  padding: 0;
+  padding: 0 20%;
   text-align: center;
   background-color: white;
+}
+.border .contactform label {
+  display: block;
+}
+.border .contactform textarea {
+  width: 250px;
+}
+@media (min-width: 801px) {
+  .border {
+    width: 75%;
+  }
+}
+@media (max-width: 800px) {
+  .border {
+    width: 100%;
+  }
+  .border .contactform {
+    padding: 0 15%;
+  }
+}
+@media (max-width: 461px) {
+  .border {
+    width: 100%;
+  }
+  .border .contactform {
+    padding: 0;
+  }
 }

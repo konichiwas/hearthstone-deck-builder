@@ -1,18 +1,42 @@
 .border {
-	width: 50%;
-	height: 500px;
 	margin: 50px auto;
 	overflow:hidden;
 	
 	background-color: @gray-dark;
 
 	.contactform {
-		width: 75%;
+		width: 290px;
 		margin: 50px auto;
-		padding: 0;
+		padding: 0 20%;
 		
 		text-align: center;
 		background-color: white;
 
+		label {
+			display: block;
+		}
+
+		textarea {
+			width: 250px;
+		}
+	}
+
+	@media (min-width: 801px) {
+		width: 75%;
+
+	}
+	@media (max-width: 800px){
+		width: 100%;
+
+		.contactform {		
+			padding: 0 15%;
+		}
+	}
+	@media (max-width: 461px) {
+		width: 100%;
+
+		.contactform {
+			padding: 0;
+		}
 	}
 }
