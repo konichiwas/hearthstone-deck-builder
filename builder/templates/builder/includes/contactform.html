@@ -1,9 +1,16 @@
+{% load builder_tags %}
+
 <div class="border">
 	<div class="contactform">
 		<h3>Send us a message</h3>
-		<form action="{% url 'builder:contact' %}" method="POST" id="contactform">
+		<form action="{% url 'builder:contact' %}" method="POST" id="contactform" novalidate>
 			{% csrf_token %}
-			{{ form.as_p }}
+			<div class="row">
+				{% render_field form.fullname %}
+				{% render_field form.email %}	
+			</div>
+			{% render_field form.subject %}
+			{% render_field form.message %}
 		<button type="Submit">Send</button>	
 		</form>
 	</div>

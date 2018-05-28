@@ -1,42 +1,105 @@
 .border {
+	max-width: 1200px;
+	width: 100%;
 	margin: 50px auto;
-	overflow:hidden;
+	box-sizing: border-box;
+	padding: 50px 5px;
 	
 	background-color: @gray-dark;
+	
+	@media (min-width: 801px) {
+		.contactform {
+			padding: 30px;
+			
+			textarea, input {
+				padding: 10px 20px;
+			}
+		}
 
+		.row {
+			.clearfix;
+
+			@spacing: 20px;
+			.field {
+				float: left;
+				width: calc(50% - (@spacing / 2));
+
+				+ .field {
+					margin-left: @spacing;
+				}
+			}
+		}
+	}
+	@media (max-width: 800px){
+		.contactform {
+			padding: 30px 10px;
+			
+			textarea, input {
+				padding: 10px 5px;
+			}
+		}
+		.row .field {
+			width: 100%;
+		}
+	}
 	.contactform {
-		width: 290px;
-		margin: 50px auto;
-		padding: 0 20%;
+		max-width: 650px;
+		width: 100%;
+		margin: 0 auto;
+		box-sizing: border-box;
+
+		background-color: silver;
 		
-		text-align: center;
-		background-color: white;
+
+		.field {
+			position: relative;
+			margin-bottom: 20px;
+
+			&.error input, &.error textarea {
+				border: 1px solid @red;
+			}
+
+		}
 
 		label {
 			display: block;
+			margin-bottom: 5px;
+		}
+		
+		textarea, input {
+			box-sizing: border-box;
+			width: 100%;
+			border-radius: 4px;
+			border: none;
+			border: 1px solid transparent;
 		}
 
 		textarea {
-			width: 250px;
+			resize: none;
 		}
-	}
 
-	@media (min-width: 801px) {
-		width: 75%;
+		.errorlist {
+			.reset-list;
+			
+			position: absolute;
+			top: calc(100% + 2px);
 
-	}
-	@media (max-width: 800px){
-		width: 100%;
-
-		.contactform {		
-			padding: 0 15%;
+			font-size: 12px;
+			color: @red;
 		}
-	}
-	@media (max-width: 461px) {
-		width: 100%;
 
-		.contactform {
-			padding: 0;
+		button {
+			display: block;
+			background: none;
+			border: none;
+			max-width: 180px;
+			width: 100%;
+			margin: 0 auto;
+			padding: 15px 20px;
+			border-radius: 30px;
+			
+			background-color: @gray-dark;
+			color: white;
 		}
 	}
 }
