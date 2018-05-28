@@ -1,0 +1,7 @@
+<div class="field {% if field.errors %}error{% endif %}">
+	{{ field.label_tag }}
+	{{ field }}
+	{% if field.errors %}
+		{{ field.errors }}
+	{% endif %}	
+</div>	
