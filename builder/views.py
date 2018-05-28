@@ -35,7 +35,7 @@ def album(request):
 	return render(request, 'builder/album.html', context)
 
 def contact(request):
-	form =  ContactForm(request.POST or None)
+	form =  ContactForm(request.POST or None, label_suffix='')
 	success = False
 	if form.is_valid():
 		form.save()

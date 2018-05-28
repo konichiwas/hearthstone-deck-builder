@@ -61,10 +61,10 @@ class Promo(models.Model):
 		return self.expansion.name
 
 class Message(models.Model):
-	name = models.CharField(max_length=50)
-	lastname = models.CharField(max_length=50)
+	fullname = models.CharField(max_length=250)
 	email = models.EmailField()
-	message = models.CharField(max_length=1000)
+	subject = models.CharField(max_length=250)
+	message = models.TextField()
 	date = models.DateTimeField(auto_now_add=True)
 
 	class Meta:

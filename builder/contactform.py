@@ -6,11 +6,11 @@ class ContactForm(forms.ModelForm):
 	class Meta:
 		model = Message
 		fields = [
-			'name',
-			'lastname',
+			'fullname',
 			'email',
+			'subject',
 			'message',
 		]
-		widgets = {
-			'message': forms.Textarea
-		}		
+
+		labels = {'fullname': 'Full name'}
+	

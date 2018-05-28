@@ -26,5 +26,5 @@ class PromoAdmin(admin.ModelAdmin):
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-	list_display = ['name','lastname', 'email', 'date']
+	list_display = ['fullname','subject', 'email', 'date']
 	list_filter = ['email', 'date']
