@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     'builder',
     'sync',
 
+    'ckeditor',
+    'ckeditor_uploader',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -134,6 +137,8 @@ BLACKLIST = [
     'Credits'
 ]
 
-#Local Storage of images
+# Local Storage of images
 MEDIA_ROOT = '/home/madao/Development/hsdeckbuilder/media/'
 MEDIA_URL = 'http://localhost:8080/'
+# ck-editor settings
+CKEDITOR_UPLOAD_PATH = "uploads/"
