@@ -36,6 +36,7 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
+    'easy_thumbnails',
 
     'django.contrib.admin',
     'django.contrib.auth',

@@ -4,6 +4,7 @@ pytz==2018.4
 Pillow==5.1.0
 requests==2.18.4
 django-ckeditor==5.4.0
+easy-thumbnails==2.5
 
 certifi==2018.4.16
 chardet==3.0.4
