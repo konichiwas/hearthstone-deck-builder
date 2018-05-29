@@ -140,5 +140,19 @@ BLACKLIST = [
 # Local Storage of images
 MEDIA_ROOT = '/home/madao/Development/hsdeckbuilder/media/'
 MEDIA_URL = 'http://localhost:8080/'
+
 # ck-editor settings
 CKEDITOR_UPLOAD_PATH = "uploads/"
+# ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'entities_greek': False,
+        'toolbar': [
+            ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'],
+            ['NumberedList', 'BulletedList'],
+            ['Link', 'Unlink'],
+            ['ShowBlocks'],
+            ['Image']
+        ],
+    },
+}

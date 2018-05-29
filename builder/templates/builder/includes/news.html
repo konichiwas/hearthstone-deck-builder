@@ -2,7 +2,7 @@
 	<h3>News Section</h3>
 	<ul>
 		{% for new in news %}
-			<li><b>{{ new.date }}</b> {{ new.content }}</li>
+			<li><strong>{{ new.date }}</strong> {{ new.content|safe }}</li>
 		{% endfor %}
 	</ul>	
 </div>	

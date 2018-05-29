@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 class Expansion(models.Model):
 	STATUS_CHOICES = [
@@ -44,7 +45,7 @@ class Card(models.Model):
 
 class New(models.Model):
 	date = models.DateField(auto_now_add=True)
-	content = models.TextField()
+	content = RichTextUploadingField()
 
 	def __str__(self):
 		return '%s %s' % (self.date, self.content)
