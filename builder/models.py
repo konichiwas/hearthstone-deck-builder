@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
+from easy_thumbnails.fields import ThumbnailerImageField
 
 class Expansion(models.Model):
 	STATUS_CHOICES = [
@@ -52,7 +53,7 @@ class New(models.Model):
 
 class Promo(models.Model):
 	expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)
-	image = models.ImageField(upload_to='images/', default='')
+	image = ThumbnailerImageField(upload_to='images/')
 	order = models.PositiveIntegerField(default=1)
 
 	class Meta:
