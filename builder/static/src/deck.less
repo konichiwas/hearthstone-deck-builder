@@ -1,8 +1,11 @@
 .deck {
-
-	margin: 50px 0;
+	margin-bottom: 50px;
+	width: 100%;
+	box-sizing: border-box;
 	
-	background-color: gray;
+	background-color: @gray-dark;
+	border-top: 5px solid #e0e0e0;
+	border-left: 5px solid #e0e0e0;
 	text-align: center;
 
 	.player-class {
@@ -10,5 +13,27 @@
 		height: 50px;
 		width: 150px;
 		margin: 20px auto;
+	}
+	
+	p, h3 {
+		color: white;
+	}
+	select {
+		margin: 20px auto;
+		width:75%;
+	}
+
+	@media (min-width: 601px) {
+		select {
+			display: none;
+		}
+	}
+	@media (max-width: 600px) {
+		.player-class {
+			display: none;
+		}
+	}
+	@media (max-width: 1181px ) {
+		border: none;
 	}
 }

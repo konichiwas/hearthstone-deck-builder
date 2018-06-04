@@ -21,7 +21,14 @@
 	<h3>Pick a class</h3>
 	{% for class in classes %}
 	<button class="player-class">{{ class }}</button>
-	{% endfor %}	
+	{% endfor %}
+	<div class="player-class-dropdown">
+		<select action="" id="" novalidate>
+			{% for class in classes %}
+				<option value="">{{ class }}</option>
+			{% endfor %}	
+		</select>
+	</div>	
 </div>
 {% endif %}
 
