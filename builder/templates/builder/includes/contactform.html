@@ -1,6 +1,10 @@
+{% load static %}
 {% load builder_tags %}
 
 <div class="border">
+	<div class="contact-image">
+		<img src="{% static "builder/images/contact.jpg" %}">
+	</div>
 	<div class="contactform">
 		<h3>Send us a message</h3>
 		<form action="{% url 'builder:contact' %}" method="POST" id="contactform" novalidate>
