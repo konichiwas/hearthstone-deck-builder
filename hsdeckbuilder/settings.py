@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Athens'
 
 USE_I18N = True
 
@@ -175,12 +175,12 @@ THUMBNAIL_ALIASES = {
     },
     'news.Article.image': {
         'small': {
-            'size': (140, 160),
+            'size': (140, 180),
             'crop': '50 50',
             'upscale': True,
         },
         'large': {
-            'size': (1024, 250),
+            'size': (1200, 250),
             'crop': 'smart',
             'upscale': True,
         }
