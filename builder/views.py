@@ -1,14 +1,15 @@
 from django.shortcuts import render
 
 from .card_filter import SearchForm
-from .models import Card, New, Promo, PlayerClass
+from .models import Card, Promo, PlayerClass
+from news.models import Article
 from .utils import split_cards, get_random_card
 from .contactform import ContactForm
 
 def index(request):
 	cards = {}
 	promos = Promo.objects.all()
-	news = New.objects.all().order_by('-date')
+	news = Article.objects.all()[:2]
 	for promo in promos:
 		key = promo.expansion.name
 		cards[key] = get_random_card(promo)

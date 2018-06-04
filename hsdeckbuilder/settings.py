@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'builder',
     'sync',
+    'news',
 
     'ckeditor',
     'ckeditor_uploader',
@@ -155,5 +156,33 @@ CKEDITOR_CONFIGS = {
             ['ShowBlocks'],
             ['Image']
         ],
+    },
+}
+
+# easy-thumbnails settings
+THUMBNAIL_ALIASES = {
+    'builder.Promo.image': {
+        'slide': {
+            'size': (1024, 550), 
+            'crop': 'smart',
+            'upscale': True,
+        },
+        'small': {
+            'size': (700, 100), 
+            'crop': 'smart',
+            'upscale': True,
+        },
+    },
+    'news.Article.image': {
+        'small': {
+            'size': (140, 160),
+            'crop': '50 50',
+            'upscale': True,
+        },
+        'large': {
+            'size': (1024, 250),
+            'crop': 'smart',
+            'upscale': True,
+        }
     },
 }

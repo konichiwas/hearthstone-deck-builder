@@ -1,0 +1,33 @@
+{% extends 'builder/base.html' %}
+{% block title %}News{% endblock %}
+
+{% block body %}
+<div class="width-wrapper">
+	<div class="archive">
+		<div class="news-header">
+			<h2>News Section</h2>
+		</div>
+		<ul>
+			{% for new in news %}
+				<li>
+					<a href="{{ new.get_absolute_url }}" class="news-image">
+						<img class="news-image" src="{{ new.image.small.url }}">
+					</a>
+					<div class="right-col">
+						<div class="date">{{ new.date }}</div>
+						<a href="{{ new.get_absolute_url }}" class="title">
+							{{ new.title }}
+						</a>
+						<div class="teaser">
+							{{ new.content|safe|truncatewords_html:25 }}
+						</div>
+						<a href="{{ new.get_absolute_url }}" class="read-more">
+							Read more
+						</a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>	
+</div>
+{% endblock %}

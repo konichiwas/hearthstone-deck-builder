@@ -1,5 +1,5 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
+
 from easy_thumbnails.fields import ThumbnailerImageField
 
 class Expansion(models.Model):
@@ -43,13 +43,6 @@ class Card(models.Model):
 
 	def __str__(self):
 		return self.card_id
-
-class New(models.Model):
-	date = models.DateField(auto_now_add=True)
-	content = RichTextUploadingField()
-
-	def __str__(self):
-		return '%s %s' % (self.date, self.content)
 
 class Promo(models.Model):
 	expansion = models.ForeignKey(Expansion, on_delete=models.CASCADE)

@@ -25,7 +25,7 @@ class SearchForm(forms.ModelForm):
 	FORMAT_CHOICES = Expansion.STATUS_CHOICES
 
 	cost = forms.ChoiceField(choices=COST_CHOICES, required=False)
-	FORMAT = forms.ChoiceField(choices=FORMAT_CHOICES, required=False)
+	game_format = forms.ChoiceField(choices=FORMAT_CHOICES, required=False)
 
 	def __init__(self, *args, **kwargs):
 		super(SearchForm, self).__init__(*args, **kwargs)
@@ -44,7 +44,7 @@ class SearchForm(forms.ModelForm):
 						query['cost'] = int(data['cost'])
 					else:
 						query['cost__gte'] = int(data['cost'])
-				elif k == 'FORMAT':
+				elif k == 'game_format':
 					if data[k] != 'wild':
 						query['expansion__status'] = data[k]		 
 				else:

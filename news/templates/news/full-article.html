@@ -1,0 +1,22 @@
+{% extends 'builder/base.html' %}
+
+{% block title %}{{ new.title }}{% endblock %}
+
+{% block body %}
+<div class="width-wrapper">
+	<div class="news-border">
+		<div class="news-section">
+			<div class="news-image">
+				<img class="news-image" src="{{ new.image.large.url }}">
+			</div>
+			<div class="news-body">
+				<div class="date">{{ new.date }}</div>
+				<div class="title">{{ new.title }}</div>
+				<div class="content">
+					{{ new.content|safe }}
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+{% endblock %}
