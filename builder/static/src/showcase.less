@@ -1,20 +1,38 @@
 .showcase {
 	.clearfix;
 
-	margin: 50px 0;
+	margin: 0;
+	width: 100%;
 	
 	background: white url("images/album_background.jpg");
 
 	.slick-arrow {	
 	    position: absolute;
-	    top: 50%;
-	    z-index: 10;
 	    border: none;
-	    width: 25px;
-	    height: 25px;
-	    background-color: @gray-dark;
+	    background: none;
+	    outline: none;
+	    z-index: 10;
+	    top: 50%;
+	    width: 35px;
+	    height: 35px;
 	    border-radius: 50%;
 	    text-indent: -4000px;
+	    
+	    background-color: white;
+
+        &::before {
+    		.reset-pseudo;
+
+    		position: absolute;
+    		top: 50%;			
+    		left: 50%;
+    		transform: translate(-50%, -50%);
+    		width:40%;
+    		height: 40%;
+    		background: url("images/arrow.png");
+    		background-size: cover;
+    		mix-blend-mode: multiply;
+        }
 	}
 
 	.slick-prev {
@@ -22,7 +40,11 @@
 	}
 
 	.slick-next {
-		left: 95%;
+		right: 1%;
+
+		&::before {		
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
 	}
 
 	img {
@@ -30,4 +52,25 @@
 		float: left;
 		width: 25%;
 	}
+	
+	@media(min-width: 1181px) {
+		margin-bottom: 50px;
+	}
+	@media (max-width: 600px) {
+		img {
+			width: 50%;
+		}		
+	}
+	@media (min-width: 601px) and (max-width: 800px) {
+		.slick-arrow {
+			width: 20px;
+	    	height: 20px;
+		}
+	}
+	@media (max-width: 400px) {
+		.slick-arrow {
+			width: 20px;
+	    	height: 20px;
+		}
+	} 	
 }
