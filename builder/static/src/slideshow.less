@@ -1,58 +1,154 @@
 .slideshow {
+	@narrow-column: 315px;
+
+	.clearfix;
+	
+	width: 100%;
+	margin: 50px 0;
+	padding-bottom: 50px;
+
 	background-color: @gray-dark;
 
 	.expansion {
-		float: left;
-		width: 75%;
-		margin-top: 25px;
-		margin-bottom: 100px;
-
+		overflow: hidden;
+		
 		img {
-			width: 100%;
+			display: block;
+			position:relative;
+			left: 50%;
+			transform: translateX(-50%);
 		}
 	}
 
 	.card {
-		float: left;
-		width: 25%;
-
+		width: @narrow-column;
+		
 		img {
 			width: 100%;
 		}
 	}
 
 	.slick-arrow {
-    position: absolute;
-    top: 90%;
-    z-index: 10;
-    border: none;
-    background: none;
-    width: 45px;
-    height: 45px;
-    
-    background-color: white;
-    border-radius: 50%;
-    text-indent: -4000px;
+	    position: absolute;
+	    border: none;
+	    background: none;
+ 	    outline: none;
+	    z-index: 10;
+	    bottom: 1%;
+	    width: 40px;
+	    height: 40px;
+	    border-radius: 50%;
+	    text-indent: -4000px;
+	    
+	    background-color: white;
+
+	    &::before {
+			.reset-pseudo;
+
+			position: absolute;
+			top: 50%;			
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width:40%;
+			height: 40%;
+			background: url("images/arrow.png");
+			background-size: cover;
+			mix-blend-mode: multiply;
+	    }
 	}
 
 	.slick-prev {
-		left: 1%;
+		left: 20px;
 	}
 
 	.slick-next {
-		left: 95%;
+		right: 20px;
+
+		&::before {
+			
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
 	}
 
 	.slick-dots {
+		.clearfix;
+		.reset-list;
+
 		position: absolute;
-		top: 85%;
+		bottom: 22px;
 		left: 50%;
-		transform: rotate(270deg);
+		transform: translateX(-50%);
 		border: none;
 		background: none;
+		
+		li {
+			float: left;
+
+			+ li {
+				margin-left: 5px;
+			}
+
+			&.slick-active button::after {
+				opacity: 1;
+			}
+		}
 
 		button {
-			transform: rotate(90deg);
+			outline: none;
+			position: relative;
+			border: none;
+			background: none;
+			background-color: white;
+			border-radius: 50%;
+			font-size: 0;
+			width: 16px;
+			height: 16px;
+
+			&::after {
+				.reset-pseudo;
+				
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				opacity: 0;
+				transition: opacity 0.3s; 
+
+				background: @gray-dark;
+			}
+		}
+	}
+	@media (min-width: 601px) {
+
+		.expansion {
+			float: left;
+			width: calc(100% - @narrow-column);
+			
+			.promo-image-small {
+				display: none;
+			}
+		}
+
+		.card {
+			float: left;
+			width : @narrow-column;
+		}
+	}
+
+	@media (max-width: 600px) {
+		
+		.expansion {
+			.promo-image {
+				display:none;
+			}
+		}
+
+		.card {
+			margin-left: auto;
+			margin-right: auto;	
 		}
 	}
 }

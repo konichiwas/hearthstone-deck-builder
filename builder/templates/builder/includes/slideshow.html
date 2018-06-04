@@ -2,7 +2,10 @@
 	{% for promo in promos %}
 		<div class="slide">
 			<div class="expansion">
-				<img class="promo-image" src="{{ promo.image.url }}">
+				<img class="promo-image-small" 
+					src="{{ promo.image.small.url }}"
+				>
+				<img class="promo-image" src="{{ promo.image.slide.url }}">
 			</div>
 			{% for key, value in cards.items %}
 				{% if key is promo.expansion.name  %}
