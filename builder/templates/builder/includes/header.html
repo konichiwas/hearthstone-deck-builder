@@ -10,6 +10,8 @@
 			<img src="{% static "builder/images/logo.png" %}" alt="logo">
 		</a>
 		<ul class="main-menu">
+			<li><a href="{% url 'builder:index' %}">Home</a></li>
+			<li><a href="{% url 'news:news' %}">News</a></li>
 			<li><a href="{% url 'builder:album' %}">Album</a></li>
 			<li><a href="{% url 'builder:contact' %}">Contact</a></li>
 		</ul>
