@@ -1,6 +1,16 @@
+{% load builder_tags %}
+
 <div class="cardfilter">
 	<form action="" method="GET" id="cardfilter" novalidate>
-		{{ form.as_p }}
-	<button type="Submit">Submit</button>	
+		{% render_field form.expansion %}
+		<div class="row">
+			{% render_field form.player_class %}
+			{% render_field form.game_format %}	
+		</div>
+		<div class="row bot">
+			{% render_field form.cost %}
+			{% render_field form.rarity %}	
+		</div>
+	<button type="Submit">Search</button>	
 	</form>
 </div>
