@@ -9,5 +9,5 @@ easy-thumbnails==2.5
 certifi==2018.4.16
 chardet==3.0.4
 idna==2.6
-urllib3==1.22
+urllib3==1.26.5
 django-js-asset==1.1.0
